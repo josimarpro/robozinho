@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Livre - Autorização</title>
+</head>
+
+<body>
+    <h1>Mercado Livre</h1>
+    <h2>Autorização recebida</h2>
+
+    <p id="mensagem">Verificando código...</p>
+
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        const codigo = parametros.get("code");
+
+        if (codigo) {
+            document.getElementById("mensagem").innerHTML =
+                "Código recebido com sucesso:<br><br>" +
+                "<strong>" + codigo + "</strong>";
+        } else {
+            document.getElementById("mensagem").innerText =
+                "Nenhum código de autorização foi recebido.";
+        }
+    </script>
+</body>
+</html>
